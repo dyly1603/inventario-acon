@@ -1,0 +1,5 @@
+node_modules/
+.env
+inventario.db
+dist/
+.DS_Store
