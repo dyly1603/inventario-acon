@@ -242,11 +242,12 @@ app.delete('/api/activos/:id', async (req, res) => {
 // SERVIR FRONTEND EN PRODUCCIÓN
 // ==========================================
 // AHORA (Compatible con Express 5)
+// SERVIR FRONTEND EN PRODUCCIÓN (Compatible con Express 5)
 if (process.env.NODE_ENV === 'production') {
     const frontendDist = path.join(__dirname, '../frontend/dist');
     app.use(express.static(frontendDist));
     
-    app.get('(.*)', (req, res) => {
+    app.get('/*splat', (req, res) => {
         res.sendFile(path.join(frontendDist, 'index.html'));
     });
 }
