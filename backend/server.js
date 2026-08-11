@@ -221,3 +221,13 @@ app.delete('/api/usuarios/:id', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Servidor API corriendo en http://localhost:${PORT}`);
 });
+const path = require('path');
+
+// Si estamos en producción, servimos el frontend compilado
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../frontend/dist')));
+    
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname, '../frontend/dist/index.html'));
+    });
+}
