@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate, Link } from 'react-ro
 import axios from 'axios';
 import * as XLSX from 'xlsx';
 import { Search, Plus, Monitor, Laptop, ShieldCheck, Pencil, Trash2, X, ChevronLeft, ChevronRight, Filter, Download, Building, Users, LogOut } from 'lucide-react';
-import { Login, RecuperarPassword, ResetPassword } from './Login';
+import { Login, RecuperarPassword, ResetPassword } from './login';
 
 // ==========================================
 // COMPONENTE: GESTIÓN DE USUARIOS (Solo Admin)
